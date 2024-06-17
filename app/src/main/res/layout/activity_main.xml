@@ -1,0 +1,293 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/_6sdp">
+
+    <!-- Header -->
+    <TextView
+        android:id="@+id/greeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello, Mr. Rashi, here is your performance."
+        android:textColor="@color/black"
+        android:textSize="@dimen/_15ssp"
+        android:textStyle="bold" />
+
+    <!-- Date and Session Selector -->
+    <LinearLayout
+        android:id="@+id/date_session_selector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/greeting"
+        android:layout_marginTop="@dimen/_3sdp">
+
+        <TextView
+            android:id="@+id/date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="17 Apr 2024"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
+
+        <Spinner
+            android:id="@+id/session_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp" />
+    </LinearLayout>
+
+    <!-- Status and Metrics -->
+    <HorizontalScrollView
+        android:id="@+id/status_metrics_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/date_session_selector"
+        android:layout_marginTop="@dimen/_3sdp">
+
+        <LinearLayout
+            android:id="@+id/status_metrics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/_16sdp">
+
+            <!-- Session Time -->
+            <RelativeLayout
+                android:id="@+id/session_time_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_11sdp">
+
+                <ProgressBar
+                    android:id="@+id/session_time_progress"
+                    style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:indeterminateOnly="false"
+                    android:max="100"
+                    android:progress="2"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:id="@+id/session_time_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/session_time_progress"
+                    android:layout_alignTop="@id/session_time_progress"
+                    android:layout_alignRight="@id/session_time_progress"
+                    android:layout_alignBottom="@id/session_time_progress"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textSize="@dimen/_17ssp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/session_time_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/session_time_progress"
+                    android:layout_centerHorizontal="true"
+                    android:text="Session Time"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8ssp" />
+            </RelativeLayout>
+
+            <!-- Movement Score -->
+            <RelativeLayout
+                android:id="@+id/movement_score_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_11sdp">
+
+                <ProgressBar
+                    android:id="@+id/movement_score_progress"
+                    style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:indeterminateOnly="false"
+                    android:max="100"
+                    android:progress="8"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:id="@+id/movement_score_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/movement_score_progress"
+                    android:layout_alignTop="@id/movement_score_progress"
+                    android:layout_alignRight="@id/movement_score_progress"
+                    android:layout_alignBottom="@id/movement_score_progress"
+                    android:gravity="center"
+                    android:text="8"
+                    android:textSize="@dimen/_17ssp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/movement_score_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/movement_score_progress"
+                    android:layout_centerHorizontal="true"
+                    android:text="Movement Score"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8ssp" />
+            </RelativeLayout>
+
+            <!-- Success Rate -->
+            <RelativeLayout
+                android:id="@+id/success_rate_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_11sdp">
+
+                <ProgressBar
+                    android:id="@+id/success_rate_progress"
+                    style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:indeterminateOnly="false"
+                    android:max="100"
+                    android:progress="88"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:id="@+id/success_rate_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/success_rate_progress"
+                    android:layout_alignTop="@id/success_rate_progress"
+                    android:layout_alignRight="@id/success_rate_progress"
+                    android:layout_alignBottom="@id/success_rate_progress"
+                    android:gravity="center"
+                    android:text="88"
+                    android:textSize="@dimen/_17ssp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/success_rate_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/success_rate_progress"
+                    android:layout_centerHorizontal="true"
+                    android:text="Success Rate"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8ssp" />
+            </RelativeLayout>
+
+            <!-- Assisted -->
+            <RelativeLayout
+                android:id="@+id/assisted_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_11sdp">
+
+                <ProgressBar
+                    android:id="@+id/assisted_progress"
+                    style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:indeterminateOnly="false"
+                    android:max="100"
+                    android:progress="100"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:id="@+id/assisted_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/assisted_progress"
+                    android:layout_alignTop="@id/assisted_progress"
+                    android:layout_alignRight="@id/assisted_progress"
+                    android:layout_alignBottom="@id/assisted_progress"
+                    android:gravity="center"
+                    android:text="NO"
+                    android:textSize="@dimen/_17ssp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/assisted_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/assisted_progress"
+                    android:layout_centerHorizontal="true"
+                    android:text="Assisted"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8ssp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Joint Selector -->
+    <ImageView
+        android:id="@+id/hand_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_160sdp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/newhand"
+        android:layout_below="@id/status_metrics_scroll"
+        android:layout_marginTop="@dimen/_3sdp" />
+
+    <!-- ROM and Movement Data -->
+    <RelativeLayout
+        android:id="@+id/rom_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hand_image"
+        android:layout_marginTop="@dimen/_3sdp">
+
+        <ProgressBar
+            android:id="@+id/romProgressBar"
+            style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
+            android:layout_width="82dp"
+            android:layout_height="129dp"
+            android:indeterminateOnly="false"
+            android:max="100"
+            android:progress="20"
+            android:progressDrawable="@drawable/circular_progress_bar" />
+
+        <TextView
+            android:id="@+id/romValue"
+            android:layout_width="77dp"
+            android:layout_height="match_parent"
+            android:layout_alignLeft="@id/romProgressBar"
+            android:layout_alignTop="@id/romProgressBar"
+            android:layout_alignRight="@id/romProgressBar"
+            android:layout_alignBottom="@id/romProgressBar"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="0dp"
+            android:gravity="center"
+            android:text="20°"
+            android:textSize="@dimen/_17ssp"
+            android:textStyle="bold" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/movement_data_graph"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_130sdp"
+            android:layout_toEndOf="@id/romProgressBar"
+            android:layout_alignTop="@id/romProgressBar"
+            android:layout_marginStart="@dimen/_2sdp" />
+    </RelativeLayout>
+
+    <!-- History Data -->
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/history_graph_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_130sdp"
+        android:layout_below="@id/rom_container"
+        android:layout_marginTop="@dimen/_4sdp" >
+    </com.github.mikephil.charting.charts.LineChart>
+    <Button
+        android:id="@+id/pdf_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/history_graph_image"
+        android:layout_centerHorizontal="true"
+        android:text="Download PDF" />
+
+
+</RelativeLayout>

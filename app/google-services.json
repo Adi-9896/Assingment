@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "280627871715",
+    "project_id": "assingment-7dc05",
+    "storage_bucket": "assingment-7dc05.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:280627871715:android:679416117de7e839b4ead6",
+        "android_client_info": {
+          "package_name": "com.example.test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbxum0vXKSK9PjxrSwpf8iVZaGvxsYXX8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
